@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metasphere – Home</title>
+
+    <!-- Inline CSS -->
+    <style>
+        /* ========== GLOBAL STYLES ========== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ========== BACKGROUND IMAGE SECTION ========== */
+        .hero {
+            height: 100vh;  /* Full viewport height */
+            background: url('/static/images/bg1.jpg') no-repeat center center/cover; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;  /* Smooth fade-in animation */
+        }
+
+        /* Overlay to improve text readability */
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);  /* Dark transparent layer */
+            padding: 80px;
+            border-radius: 15px;
+            animation: slideUp 1.5s ease-in-out;
+        }
+
+        /* Hero text styling */
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            animation: slideUp 1s ease-in-out;
+        }
+
+        /* Download Button Styling */
+        .download-btn {
+            display: inline-block;        
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: white;
+            background: #4CAF50;  /* Green color */
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-btn:hover {
+            background: #45a049;
+            transform: scale(1.05);
+        }
+
+        /* Footer Styling */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="overlay">
+        <h1>Welcome to Metasphere</h1>
+        <p>Connect. Collaborate. Create.</p>
+
+        <!-- Download APK Button ONLY -->
+        <a href="{{ url_for('static', filename='test1.apk') }}" download="test1.apk" class="download-btn">
+            Download APK
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2025 Metasphere. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
